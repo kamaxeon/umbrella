@@ -1,13 +1,11 @@
-
 def baseComparison(sec1, sec2):
-    valid_genome=['A', 'T', 'C', 'G']
     try:
-        return get_base(sec1, valid_genome) ==  \
-            get_base(sec2, valid_genome)
+        return get_base(sec1) ==  get_base(sec2)
     except ValueError:
         return False
 
-def get_base(sec, valid_genome):
+def get_base(sec):
+    valid_genome=['A', 'T', 'C', 'G']
     check_valid_base(sec, valid_genome)
     result = dict()
     for genome in valid_genome:
