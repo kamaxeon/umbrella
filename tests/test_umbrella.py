@@ -10,10 +10,10 @@
 
 import unittest
 
-from app.umbrella import Implementation1
+from app.umbrella import ImplementationOne
 
 
-class TestImplementation(unittest.TestCase):
+class TestImplementationOne(unittest.TestCase):
 
     def two_empty_bases_should_return_true(self):
         self.assertTrue(baseComparison('', ''))
