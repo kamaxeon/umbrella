@@ -5,14 +5,14 @@ def baseComparison(sec1, sec2):
         return False
 
 def get_base(sec):
-    valid_genome=['A', 'T', 'C', 'G']
-    check_valid_base(sec, valid_genome)
+    check_valid_base(sec)
     result = dict()
-    for genome in valid_genome:
+    for genome in sec:
         result[genome] = sec.count(genome)
     return result
 
-def check_valid_base(sec, valid_genome):
+def check_valid_base(sec):
+    valid_genome=['A', 'T', 'C', 'G']
     for char in sec:
         if char not in valid_genome:
             raise ValueError('Base not valid')
