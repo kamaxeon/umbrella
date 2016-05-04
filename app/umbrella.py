@@ -12,7 +12,6 @@ def get_base(sec):
     return result
 
 def check_valid_base(sec):
-    valid_genome=['A', 'T', 'C', 'G']
     for char in sec:
-        if char not in valid_genome:
+        if char not in ['A', 'T', 'C', 'G']:
             raise ValueError('Base not valid')
