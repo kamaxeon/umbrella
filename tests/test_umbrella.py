@@ -10,24 +10,27 @@
 
 import unittest
 
-from app.umbrella import ImplementationOne
+from app.umbrella import baseComparison
 
 
 class TestImplementationOne(unittest.TestCase):
 
-    def two_empty_bases_should_return_true(self):
+    def test_two_empty_bases_should_return_true(self):
         self.assertTrue(baseComparison('', ''))
         self.assertTrue(baseComparison('AATG', 'ATGA'))
 
-    def one_empty_base_with_another_valid_should_return_true(self):
+    def test_one_empty_base_with_another_valid_should_return_true(self):
         self.assertTrue(baseComparison('AATG', 'ATGA'))
 
-    def two_bases_with_the_same_string_should_return_true(self):
+    def tes_two_bases_with_the_same_string_should_return_true(self):
         self.assertTrue(baseComparison('AATG', 'AATG'))
 
-    def two_bases_with_diferent_lenght_should_return_false(self):
-        self.assertFalse(baseComparison('AATG', 'AATG'))
+    def test_two_bases_with_diferent_lenght_should_return_false(self):
+        self.assertFalse(baseComparison('AAT', 'AATG'))
 
-    def invalid_base_should_return_false(self):
+    def test_invalid_base_should_return_false(self):
         self.assertFalse(baseComparison('AATG', 'AAHG'))
         self.assertFalse(baseComparison('ATHG', 'ATHG'))
+
+    def test_two_different_bases_should_return_false(self):
+        self.assertFalse(baseComparison('ATA', 'ATT'))
