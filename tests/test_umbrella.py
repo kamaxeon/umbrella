@@ -15,15 +15,12 @@ from app.umbrella import baseComparison
 
 class TestImplementationOne(unittest.TestCase):
 
-    def test_two_empty_bases_should_return_true(self):
+    def test_two_equals_valid_bases_should_return_true(self):
         self.assertTrue(baseComparison('', ''))
-        self.assertTrue(baseComparison('AATG', 'ATGA'))
+        self.assertTrue(baseComparison('AATG', 'AATG'))
 
     def test_one_empty_base_with_another_valid_should_return_true(self):
         self.assertTrue(baseComparison('AATG', 'ATGA'))
-
-    def tes_two_bases_with_the_same_string_should_return_true(self):
-        self.assertTrue(baseComparison('AATG', 'AATG'))
 
     def test_two_bases_with_diferent_lenght_should_return_false(self):
         self.assertFalse(baseComparison('AAT', 'AATG'))
