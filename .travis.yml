@@ -3,4 +3,4 @@ python:
     - 2.7
     - 3.4
 install: pip install nose
-script: nosetests tests/test_calculator.py
+script: nosetests tests/test_umbrella.py
